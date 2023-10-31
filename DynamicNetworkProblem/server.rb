@@ -20,6 +20,13 @@ class Server
   end
 
   def overloaded?
-    current_load >= max_load * 0.5
+    current_load >= max_load
   end
+
+  def print_nodes
+    @nodes.each_with_index do |node, index|
+      puts "\tNode #{index}, load: #{node.load}"
+    end
+  end
+
 end
